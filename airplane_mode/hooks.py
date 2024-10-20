@@ -4,6 +4,8 @@ app_publisher = "Pratiksha Khakse"
 app_description = "It airplane mode app which i cr"
 app_email = "pratikshakhakse273@gmail.com"
 app_license = "mit"
+
+
 # required_apps = []
 
 # Includes in <head>

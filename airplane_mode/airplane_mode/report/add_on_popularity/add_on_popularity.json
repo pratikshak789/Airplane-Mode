@@ -1,0 +1,39 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-10-18 17:43:32.729952",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-10-18 17:55:26.764786",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Add-on Popularity",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    t.add_on_type AS \"Add-On Type:Link/Airplane Ticket Add-on Type\",\n    COUNT(t.add_on_type) AS \"Sold Count:Int\"\nFROM \n    `tabAirplane Ticket` t\nWHERE \n    t.add_on_type IS NOT NULL\nGROUP BY \n    t.add_on_type\nORDER BY \n    COUNT(t.add_on_type) DESC\n",
+ "ref_doctype": "Airplane Ticket",
+ "report_name": "Add-on Popularity",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Fleet Manager"
+  },
+  {
+   "role": "Travel Agent"
+  },
+  {
+   "role": "Airport Authority Personnel"
+  },
+  {
+   "role": "Flight Crew Member"
+  }
+ ]
+}

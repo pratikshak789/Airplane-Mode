@@ -1,0 +1,52 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+{% endblock %}
+
+<div class="flight-detail-box">
+    <h2>Flight Details</h2>
+    <p><strong>Route:</strong> <strong>{{ doc.route |e }}</strong></p>
+    <p><strong>Airline:</strong> {{ doc.airline }}</p>
+    <p>{{ doc.source_airport_code }} → {{ doc.destination_airport_code }}</p>
+    <p>{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }}</p>
+    <p><strong>Duration:</strong> {{ frappe.utils.format_duration(doc.duration) }}</p>
+    <a href="/book-flight?flight_id={{ doc.name }}" class="book-link">Book Flight</a>
+</div>
+
+<style>
+    .flight-detail-box {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .flight-detail-box h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .flight-detail-box p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .book-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #3b87f7;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .book-link:hover {
+        background-color: #2f6dd5;
+    }
+</style>
